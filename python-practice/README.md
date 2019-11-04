@@ -36,12 +36,14 @@ Build the image with "docker image build".
 ```
 $ cd python-practice
 $ sudo docker image build -t python-project:0.0.1 .
+
 ```
 
 Then run the new python image with "docker run".
 
 ```
 $ sudo docker container run --detach --name python-project python-project:0.0.1
+
 ```
 
 Check that the container with the name "python-project" is running:
@@ -49,8 +51,8 @@ Check that the container with the name "python-project" is running:
 ```
 $ sudo docker ps -a
 
-CONTAINER ID        IMAGE                  COMMAND               CREATED              STATUS                       PORTS               NAMES
-31797cc193ab        python-project:0.0.1   "tail -f /dev/null"   About a minute ago   Exited (137) 9 seconds ago                       python-project
+CONTAINER ID        IMAGE                  COMMAND               CREATED             STATUS              PORTS               NAMES
+31797cc193ab        python-project:0.0.1   "tail -f /dev/null"   5 seconds ago       Up 3 seconds                            python-project
 
 ```
 
@@ -66,12 +68,12 @@ root@31797cc193ab:/usr/src/app#
 The Python code from the local project can be found inside the container.
 
 ```
-root@31797cc193ab:/usr/src/app# python-examples
+root@31797cc193ab:/usr/src/app# cd python-examples
 
-root@31797cc193ab:/usr/src/app# ls
+root@31797cc193ab:/usr/src/app/python-examples# ls
 hello_world.py
 
-root@31797cc193ab:/usr/src/app# python3 hello_world.py
+root@31797cc193ab:/usr/src/app/python-examples# python3 hello_world.py
 Hello world!
 
 ```
