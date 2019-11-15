@@ -1,14 +1,6 @@
-# https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
+# https://hub.docker.com/_/openjdk?tab=description
 
-FROM ubuntu:16.04
-
-# Installing Java 8
-RUN apt-get update
-# RUN apt-get install default-jre
-# RUN apt-get install default-jdk
-# RUN add-apt-repository ppa:webupd8team/java
-# RUN apt-get update
-# RUN apt-get install oracle-java8-installer
+FROM openjdk:8
 
 # Copying java code from local project
 WORKDIR /usr/src/app
